@@ -1,0 +1,114 @@
+:root {
+  --bg: #e0e7ff;
+  --calc-bg: rgba(255, 255, 255, 0.1);
+  --btn-bg: rgba(255, 255, 255, 0.15);
+  --btn-hover: rgba(255, 255, 255, 0.3);
+  --text: #111;
+  --accent: #3b82f6;
+  --equal: #10b981;
+  --clear: #ef4444;
+  --glass-blur: blur(10px);
+}
+
+body.dark {
+  --bg: #0f172a;
+  --calc-bg: rgba(30, 41, 59, 0.5);
+  --btn-bg: rgba(255, 255, 255, 0.05);
+  --btn-hover: rgba(255, 255, 255, 0.15);
+  --text: #f1f5f9;
+  --accent: #60a5fa;
+  --equal: #34d399;
+  --clear: #f87171;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.5s ease;
+}
+
+.calculator {
+  width: 320px;
+  max-width: 95vw;
+  background: var(--calc-bg);
+  backdrop-filter: var(--glass-blur);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle {
+  text-align: right;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.display {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  height: 60px;
+  font-size: 26px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 10px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.btn {
+  background: var(--btn-bg);
+  border: none;
+  border-radius: 12px;
+  padding: 18px;
+  font-size: 18px;
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--btn-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.operator {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.equal {
+  background-color: var(--equal);
+  color: #fff;
+}
+
+.equal:hover {
+  background-color: #059669;
+  box-shadow: 0 0 10px var(--equal);
+}
+
+.clear {
+  background-color: var(--clear);
+  color: #fff;
+}
+
+.clear:hover {
+  background-color: #dc2626;
+  box-shadow: 0 0 10px var(--clear);
+}
